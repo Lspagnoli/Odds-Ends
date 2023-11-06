@@ -8,6 +8,7 @@ def merge(dataPath, outputPath):
     
     all_files = glob.glob(os.path.join(dataPath, "*.csv"))
     df = pd.concat((pd.read_csv(f) for f in all_files))
+    df.to_csv(outputPath, index=False)
     
     print("Merged!")
 
